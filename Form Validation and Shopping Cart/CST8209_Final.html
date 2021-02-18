@@ -1,0 +1,265 @@
+<html>
+  <head>
+    <title>CST8209-Final-KaziBubka</title>
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <h1>A Musical Christmas!</h1>
+
+    <h3>Give the gift of music to your loved ones!</h3>
+
+    <p>This is a basic shopping cart with a payment form. Click on image to add to cart</p>
+
+    <table>
+      <tr>
+          <th>Item</th>
+          <th>Value</th>
+          <th>Amount</th>
+          <th>Subtotal</th>
+      </tr>
+      <tr>
+          <td>
+              <img src="./img/GibsonLesPaul.jpg" alt="GibsonLesPaul" id="guitar">
+          </td>
+          <td>$1500</td>
+          <td id="detail"></td>
+          <td rowspan="4" id="total"></td>
+      </tr>
+      <tr>
+          <td>
+              <img src="./img/MarshallAmp.jpg" alt="MarshallAmp" id="amp">
+          </td>
+          <td>$850</td>
+          <td id="detail2"></td>
+      </tr>
+      <tr>
+          <td>
+              <img src="./img/Cable.jpg" alt="Cable" id="cable">
+          </td>
+          <td>$20</td>
+          <td id="detail3"></td>
+      </tr>
+      <tr>
+          <td>
+              <img src="./img/Stand.jpg" alt="Stand" id="stand">
+          </td>
+          <td>$30</td>
+          <td id="detail4"></td>
+      </tr>  
+      <tr>
+          <td colspan="3">Shopping Cart Items:</td>
+          <td id="items"></td> 
+      </tr>
+      <tr>
+        <td colspan="4">
+          <span>Your total ($CAD): </span>
+          <span id="sumTotal"></span>
+        </td>
+      </tr>
+      <tr>
+          <td colspan="4">
+            <button id="clear">Clear</button>
+          </td>
+      </tr>
+    </table>
+
+    <br>
+    <br>
+    <br>
+
+    
+    <form name="profile">
+      <h3>Profile Form</h3>
+      
+      <section>
+        <p>
+          <label for="fname">
+            <span>First Name: </span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input type="text" id="fName" name="firstName" minlength="5" maxlength="30">
+          <span class="alert" id="fNameError"></span>
+        </p>
+        <p>
+          <label for="lname">
+            <span>Last Name: </span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input type="text" id="lname" name="lastName">
+          <span class="alert" id="lNameError"></span>
+        </p>
+      </section>
+
+      <fieldset>
+        <legend>Gender</legend>
+        <ul>
+            <li>
+              <label>
+                <input type="radio" name="gender" value="Male" required>
+                Male
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="gender" value="Female">
+                Female
+              </label>
+            </li>
+            <li> 
+              <label> 
+                <input type="radio" name="gender" value="Other">
+                Other 
+              </label> 
+            </li>
+        </ul>
+        <span class="alert" id="genderError"></span>
+      </fieldset>
+
+      <section>
+        <p>
+          <label for="age">
+            <span>Age: </span>
+          </label>
+          <input type="number" min="18" max="99" id="age" name="Age">
+        </p>
+        <p>
+          <label for="address1">
+            <span>Address: </span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input type="text" id="address1" name="address1">
+          <span class="alert" id="address1Error"></span>
+        </p>
+        <p>
+          <label for="city">
+            <span>City: </span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input type="text" id="city" name="city">
+          <span class="alert" id="cityError"></span>
+        </p>
+        <p>
+          <label for="province">
+            <span>Province: </span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <select id="province">
+            <option value="">Select Province</option>
+            <option value="AB">Alberta</option>
+            <option value="BC">British Columbia</option>
+            <option value="MB">Manitoba</option>
+            <option value="NB">New Brunswick</option>
+            <option value="NL">Newfoundland and Labrador</option>
+            <option value="NS">Nova Scotia</option>
+            <option value="ON">Ontario</option>
+            <option value="PE">Prince Edward Island</option>
+            <option value="QC">Quebec</option>
+            <option value="SK">Saskatchewan</option>
+            <option value="NT">Northwest Territories</option>
+            <option value="NU">Nunavut</option>
+            <option value="YT">Yukon</option>
+          </select>
+          <span class="alert" id="provinceError"></span>
+        </p>
+
+        <p>
+          <label for="country">
+            <span> Country: </span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input list="countryChoices" id="country" name="country" required>
+          <datalist id="countryChoices">
+            <option value="Canada">
+            <option value="USA">
+            <option value="Other">
+          </datalist>
+          <span class="alert" id="countryError"></span>
+        </p>
+
+        <p>
+          <label for="gift">Check if this is a gift: </label>
+          <input type="checkbox" id="gift" name="gift">
+        </p>
+        
+      <section>
+        <h3>Payment information</h3>
+        <p>
+          <label for="card">
+            <span>Card type:</span>
+          </label>
+          <select id="card" name="usercard">
+            <option value="visa">Visa</option>
+            <option value="mc">Mastercard</option>
+            <option value="amex">American Express</option>
+          </select>
+        </p>
+        <p>
+          <label for="number">
+            <span>Card number:</span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input type="text" id="number" name="cardnumber" required>
+        </p>
+        <p>
+          <label for="date">
+            <span>Expiration date:</span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input type="date" id="date" name="expiration" min="2020-12-05" required>
+        </p>
+        <p>
+          <span>Your total ($CAD): </span>
+          <span id="yourTotal"></span>
+        </p>
+        <!-- <p>
+          <label for="yourTotal">
+            <span>Your total ($CAD): </span>
+          </label>
+          <input type="text" id="yourTotal" name="yourTotal" readonly>
+        </p> -->
+      </section>
+      <p> <button type="submit" value="Submit">Submit</button> </p>
+      <p> <button type="reset">Reset</button></p>
+      <div><span id="message" class="message"></span></div>    
+
+      </section>
+    </form>
+
+
+    <br>
+    <br>
+    <section>
+      <h3 id="userInfo"> User info:</h3>
+      <ul id="userList">
+        <li>First Name: <span id="displayFName"></span></li>
+        <li>Last Name: <span id="displayLName"></span></li> 
+        <li>Gender: <span id="displayGender"></span></li> 
+        <li>Age: <span id="displayAge"></span></li> 
+        <li>Address: <span id="displayAddress"></span></li> 
+        <li>City: <span id="displayCity"></span></li> 
+        <li>Province: <span id="displayProvince"></span></li> 
+        <li>Country: <span id="displayCountry"></span></li> 
+      </ul>
+    </section>
+    
+    <br>
+
+    <section>
+      <h3 id="orderInfo"> You picked the following items </h3>
+      <ol id="orderList">
+        <li> <span id="displayGuitar"></span> Guitars </li> 
+        <li> <span id="displayAmp"></span> Amps </li> 
+        <li> <span id="displayCable"></span> Cables </li>
+        <li> <span id="displayStand"></span> Stands </li>
+      </ol>
+    </section>
+    
+
+
+
+    <script src="scripts/scripts.js"></script>
+    <script src="scripts/validate.js"></script>
+    <script src="scripts/events.js"></script>
+  </body>
+</html>
